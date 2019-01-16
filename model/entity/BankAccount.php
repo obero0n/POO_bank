@@ -1,4 +1,4 @@
-<?php 
+<?php
 class BankAccount extends entity
 {
     protected $name;
@@ -6,34 +6,34 @@ class BankAccount extends entity
 
     const MINSUM = 50;
 
-    public function setName($name) 
+    public function setName($name)
     {
         $this->name = $name;
     }
-    
-    public function getname() 
+
+    public function getName()
     {
         return $this->name;
     }
 
-    public function setMoney($money) 
+    public function setMoney($money)
     {
         $this->money = $money;
     }
     
-    public function getmoney() 
+    public function getMoney()
     {
         return $this->money;
     }
 
-    public function __construct($data) 
-    { 
+    public function __construct($data)
+    {
         $this->hydrate($data);
     }
     //Versement
     public function payment($amount)
     {
-        if(isset($payment)) 
+        if(isset($payment))
         {
             $finalMoney = $money + $amount;
             return $finalMoney;
@@ -42,7 +42,7 @@ class BankAccount extends entity
     //Retrait
     public function withdrawal($amount)
     {
-        if(isset($withdrawal)) 
+        if(isset($withdrawal))
         {
             $finalMoney = $money + $amount;
             return $finalMoney;
@@ -53,7 +53,7 @@ class BankAccount extends entity
     {
         if(isset($transfer))
         {
-    
+
         }
     }
 }
