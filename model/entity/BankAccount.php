@@ -30,20 +30,31 @@ class BankAccount extends entity
     { 
         $this->hydrate($data);
     }
-    //Versement
+    //Versement (peut être id)
     public function payment($amount)
     {
-        
+        if(isset($payment)) 
+        {
+            $finalMoney = $money + $amount;
+            return $finalMoney;
+        }
     }
     //Retrait
-    public function withdrawal($amound)
+    public function withdrawal($amount)
     {
-
+        if(isset($withdrawal)) 
+        {
+            $finalMoney = $money + $amount;
+            return $finalMoney;
+        }
     }
     //Virement
     public function transfer($amount, $getter, $sender)
     {
-
+        if(isset($transfer))
+        {
+    
+        }
     }
 }
 ?>
