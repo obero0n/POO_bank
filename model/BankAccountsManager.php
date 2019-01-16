@@ -1,15 +1,15 @@
 <?php
 class BankAccountsManager extends manager {
 
-  // private $_db; // Instance de PDO
-  //
-  // public function __construct($db)
-  // {
-  //   $this->setDb($db);
-  // }
+  public function getAccount($id)
 
+  {
+    $id = (int) $id;
+    $q = $this->_db->query('SELECT id, name, money FROM bankAccount WHERE id = '.$id);
+    $donnees = $q->fetch(PDO::FETCH_ASSOC);
+    return new BankAccount($donnees);
 
-
+  }
 
   public function getList()
     {

@@ -11,7 +11,7 @@ class BankAccount extends entity
         $this->name = $name;
     }
     
-    public function getname() 
+    public function getName() 
     {
         return $this->name;
     }
@@ -21,7 +21,7 @@ class BankAccount extends entity
         $this->money = $money;
     }
     
-    public function getmoney() 
+    public function getMoney() 
     {
         return $this->money;
     }
@@ -31,9 +31,9 @@ class BankAccount extends entity
         $this->hydrate($data);
     }
     //Versement
-    public function payment($amount)
+    public function payment($form, $name, $money, $amount)
     {
-        if(isset($payment)) 
+        if(isset($form) && $_POST["name"] === $name) 
         {
             $finalMoney = $money + $amount;
             return $finalMoney;

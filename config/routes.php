@@ -29,6 +29,10 @@ function getRoutes() {
     "retrait" => [
       "bankAccount",
       "withdrawal",
+    ],
+    "single" => [
+      "bankAccount",
+      "singleBankAccount",
     ]
   ];
 }
