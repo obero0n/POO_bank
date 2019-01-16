@@ -30,7 +30,7 @@ class BankAccount extends entity
     { 
         $this->hydrate($data);
     }
-    //Versement (peut être id)
+    //Versement
     public function payment($amount)
     {
         if(isset($payment)) 

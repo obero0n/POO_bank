@@ -1,4 +1,4 @@
-<form method="post" action="">
+<form method="post" action="<?php setAction($value); ?>">
   <div class="form-group">
     <label for="numberBankAccount">Numéro du compte :</label>
     <input type="text" class="form-control" name="name" id="numberBankAccount" placeholder="123654S">

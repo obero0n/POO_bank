@@ -22,11 +22,11 @@ function getRoutes() {
       "admin",
       "loginUser",
     ],
-    "payment" => [
+    "versement" => [
       "bankAccount",
       "payment",
     ],
-    "withdrawal" => [
+    "retrait" => [
       "bankAccount",
       "withdrawal",
     ]
