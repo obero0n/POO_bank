@@ -29,6 +29,12 @@ function getRoutes() {
     "retrait" => [
       "bankAccount",
       "withdrawal",
+    ],
+    "deleteAccount" => [
+      "exemple",
+      "deleteAccount",
+       [
+         "id" => ["int"]]
     ]
   ];
 }
