@@ -1,7 +1,9 @@
 <?php 
 require("template/header.php");
 $id = $_GET["id"];
-$sigleAccount = getAccount($id);
+$manager = new bankAccountsManager;
+$singleAccount = $manager->getAccount($id);
+
 ?>
 <div class="card-deck m-0 d-flex">
 <table class="table bg-light">
@@ -17,13 +19,13 @@ $sigleAccount = getAccount($id);
     <tbody>
       <tr>
         <td>
-          <?php echo htmlspecialchars($sigleAccount["name"]);?>
+          <?php echo $singleAccount->getName();?>
         </td>
         <td>
-          <?php echo htmlspecialchars($sigleAccount["money"]);?>
+          <?php echo $singleAccount->getMoney();?>
         </td>
-        <td><a href="payment?id=<?php echo $sigleAccount["id"];?>" class="card-link"><i class="far fa-credit-card"></i></a></td>
-        <td><a href="withdrawal?id=<?php echo $sigleAccount["id"];?>" class="card-link"><i class="far fa-credit-card"></i></a></td>
+        <td><a href="versement?id=<?php echo $singleAccount->getId();?>" class="card-link"><i class="far fa-credit-card"></i></a></td>
+        <td><a href="retrait?id=<?php echo $singleAccount->getId();?>" class="card-link"><i class="far fa-credit-card"></i></a></td>
        </tr>
     </tbody>
   </table>

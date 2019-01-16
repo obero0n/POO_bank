@@ -18,10 +18,16 @@ class exempleController
       $account->add($compte);
 
 
-        var_dump($_POST);
+
       require "view/exempleView.php";
     }
+    public function deleteAccount(){
+      $id = $_GET['id'];
+      $deletAccount = new BankAccountsManager();
+      $erase = $deletAccount->delete($id);
 
+      header("Location:view/exempleView.php");
+    }
 }
 
 

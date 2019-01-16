@@ -5,11 +5,11 @@ class BankAccountController
     {
         $value = "versement";
         $id = $_GET["id"];
-        $data = ["3", "test", "60"];
-        $account1 = new BankAccount($data);
-        $money = $account1->getMoney();
-        $name = $account1->getName();
-        $account1->payment($_POST, $name, $money, $_POST["amount"]);
+        $manager = new BankAccountsManager();
+        $account1 = $manager->getAccount($id);
+        $account1->payment($_POST, $account1->getMoney());
+        $manager->update($account1);  
+        
         var_dump($account1);
 
         require "view/paymentWithdrawalView.php";
