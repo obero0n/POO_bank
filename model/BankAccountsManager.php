@@ -13,13 +13,13 @@ class BankAccountsManager extends manager {
 
   public function getList()
     {
-      $getlist = [];
+      $list = [];
       $q = $this->_db->query('SELECT id, name, money FROM bankAccount');
       while ($donnees = $q->fetch(PDO::FETCH_ASSOC))
       {
-        $getlist[] = new BankAccount($donnees);
+        $list[] = new BankAccount($donnees);
       }
-      return $getlist;
+      return $list;
     }
 
 ///////////////////////////////////////////////////////////////////////
@@ -27,8 +27,8 @@ class BankAccountsManager extends manager {
   public function add(BankAccount $account) {
     $q = $this->_db->prepare('INSERT INTO bankAccount(name, money) VALUES(:name, :money)');
 
-  $q->bindValue(':name', $account->name());
-  $q->bindValue(':money', $account->money(), PDO::PARAM_INT);
+  $q->bindValue(':name', $account->getname());
+  $q->bindValue(':money', $account->getmoney(), PDO::PARAM_INT);
 
   $q->execute();
   }
