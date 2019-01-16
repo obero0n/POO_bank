@@ -21,6 +21,14 @@ function getRoutes() {
     "login" => [
       "admin",
       "loginUser",
+    ],
+    "versement" => [
+      "bankAccount",
+      "payment",
+    ],
+    "retrait" => [
+      "bankAccount",
+      "withdrawal",
     ]
   ];
 }
