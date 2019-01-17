@@ -1,10 +1,11 @@
 
-<footer class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Ceci est un footer</h1>
-    <p class="lead">Réalisé par Simon, le graphiste et Cassandra, la non graphiste</p>
-  </div>
-</footer>
+</main>
+  <footer class="jumbotron jumbotron-fluid mb-0">
+    <div class="container">
+      <h1 class="display-4">Ceci est un footer</h1>
+      <p class="lead">Réalisé par Simon, Cassandra et Gino</p>
+    </div>
+  </footer>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

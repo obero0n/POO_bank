@@ -1,12 +1,7 @@
 <?php
-include "view/template/header.php";
+include "template/header.php";
 ?>
-
-<?php echo $message; ?>
-<a <?php setHref("login"); ?>>Autre page</a>
-
-
-
+<h1 class="m-5">Liste de tous les comptes</h1>
   <table class="table container">
     <thead>
       <tr>
@@ -31,6 +26,7 @@ include "view/template/header.php";
     <?php endforeach; ?>
   </table>
 
+<<<<<<< HEAD
 
 
 
@@ -49,6 +45,9 @@ include "view/template/header.php";
 
 
 
+=======
+>>>>>>> 649b4f85affb27f83e4c1f2131d814d023bcaf4c
 <?php
-include "view/template/footer.php"
+require "form/exempleForm.php";
+include "template/footer.php";
 ?>
