@@ -9,7 +9,8 @@ class BankAccountController
         {
             $manager = new BankAccountsManager();
             $account1 = $manager->getAccount($id);
-            $account1->payment($_POST["amount"]);
+            $finalMoney = $account1->getMoney() - $_POST["amount"];
+            $account1->payment($_POST["amount"], $finalMoney);
             $manager->update($account1);
             redirectTo("");
         }
@@ -24,7 +25,8 @@ class BankAccountController
         {
             $manager1 = new BankAccountsManager();
             $account2 = $manager1->getAccount($id);
-            $account2->withdrawal($_POST["amount"]);
+            $finalMoney = $account2->getMoney() - $_POST["amount"];
+            $account2->withdrawal($_POST["amount"], $finalMoney);
             $manager1->update($account2);
             redirectTo("");
         }
