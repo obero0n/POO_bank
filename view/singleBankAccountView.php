@@ -21,12 +21,7 @@ $singleAccount = $manager->getAccount($id);
         <td>
           <?php echo $singleAccount->getName();?>
         </td>
-        <td>
-          <?php echo $singleAccount->getMoney();?>
-        </td>
-        <!-- <td class="warningMoney">
-          <?php echo $singleAccount->getMoney();?> <i class="fas fa-exclamation-triangle"></i>
-        </td> -->
+        <?php echo $singleAccount->viewMoney(); ?>
         <td><a href="versement?id=<?php echo $singleAccount->getId();?>" class="card-link"><i class="far fa-credit-card"></i></a></td>
         <td><a href="retrait?id=<?php echo $singleAccount->getId();?>" class="card-link"><i class="far fa-credit-card"></i></a></td>
        </tr>
