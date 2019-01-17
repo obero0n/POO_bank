@@ -18,9 +18,17 @@ function getRoutes() {
       "bankAccount",
       "listAccount"
     ],
+    "register" => [
+      "exemple",
+      "registerUser",
+    ],
+    "admin" => [
+      "exemple",
+      "welcomeAdmin",
+    ],
     "login" => [
       "admin",
-      "loginUser",
+      "loginAdmin",
     ],
     "addAccount" => [
       "bankAccount",
