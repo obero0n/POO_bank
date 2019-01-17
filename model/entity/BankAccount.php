@@ -30,17 +30,19 @@ class BankAccount extends entity
     {
         $this->hydrate($data);
     }
+
     //Versement
-    public function payment($form, $money)
+    public function payment($amount)
     {
-        $finalMoney = $money + $form["amount"];
-        return $finalMoney;
+        $this->money += $amount;    
     }
+
     //Retrait
     public function withdrawal($amount)
     {
-        
+        $this->money -= $amount;    
     }
+    
     //Virement
     public function transfer($amount, $getter, $sender)
     {

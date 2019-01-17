@@ -1,6 +1,10 @@
 <?php
 include "template/header.php";
 ?>
+<div class="justify-content-end">
+<a <?php setHref("addAccount"); ?> class="btn btn-primary btn-lg btn-block col-md-3 offset-md-8">Rajouter un nouveau compte</a>
+</div>
+
 <h1 class="m-5">Liste de tous les comptes</h1>
   <table class="table container">
     <thead>
@@ -26,28 +30,6 @@ include "template/header.php";
     <?php endforeach; ?>
   </table>
 
-<<<<<<< HEAD
-
-
-
-<h2>Add ACCOUNT</h2>
-<form class="container" method="post" action="">
-  <div class="form-group">
-    <label>name</label>
-    <input type="text" class="form-control" name="name">
-  </div>
-  <div class="form-group">
-    <label>money</label>
-    <input type="number" class="form-control" name="money">
-  </div>
-  <input type="submit" name="" value="Valide">
-</form>
-
-
-
-=======
->>>>>>> 649b4f85affb27f83e4c1f2131d814d023bcaf4c
 <?php
-require "form/exempleForm.php";
 include "template/footer.php";
 ?>

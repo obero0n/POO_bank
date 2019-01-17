@@ -15,12 +15,16 @@
 function getRoutes() {
   return [
     "" => [
-      "exemple",
-      "welcome"
+      "bankAccount",
+      "listAccount"
     ],
     "login" => [
       "admin",
       "loginUser",
+    ],
+    "addAccount" => [
+      "bankAccount",
+      "addAccount",
     ],
     "listAccount" => [
       "bankAccount",
