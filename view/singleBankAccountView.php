@@ -3,10 +3,10 @@ require("template/header.php");
 $id = $_GET["id"];
 $manager = new bankAccountsManager;
 $singleAccount = $manager->getAccount($id);
-
 ?>
-<div class="card-deck m-0 d-flex">
-<table class="table bg-light">
+<a class="btn btn-info mx-5" href="index.php">Retour</a>
+<div class="card-deck m-5 d-flex text-center">
+  <table class="table bg-light">
     <thead>
       <tr>
         <th scope="col">Nom</th>
