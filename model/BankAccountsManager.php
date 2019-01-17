@@ -1,11 +1,12 @@
 <?php
-class BankAccountsManager extends manager 
+class BankAccountsManager extends manager
 {
 
   public function getAccount($id)
   {
     $id = (int) $id;
-    $q = $this->_db->query('SELECT * FROM bankAccount WHERE id = '.$id);
+    $q = $this->_db->prepare('SELECT * FROM bankAccount WHERE id = ?');
+    $q->execute([$id]);
     $donnees = $q->fetch(PDO::FETCH_ASSOC);
     return new BankAccount($donnees);
   }
@@ -34,7 +35,9 @@ class BankAccountsManager extends manager
 
   public function delete($id)
   {
-    $this->_db->query("DELETE FROM bankAccount WHERE id = $id");
+    $q = $this->_db->prepare("DELETE FROM bankAccount WHERE id = ?");
+    $result = $q->execute([$id]);
+    return $result;
   }
 
   ///////////////////////////////////////////////////////////////////////
@@ -46,5 +49,14 @@ class BankAccountsManager extends manager
     $q->bindValue(':id', $account->getId(), PDO::PARAM_INT);
     $q->execute();
   }
+  public function updateTransfert(BankAccount $account)
+  {
+    $q = $this->_db->prepare('UPDATE bankAccount SET money = :money WHERE id = :id');
+    $q->bindValue(':money', $account->getMoney(), PDO::PARAM_INT);
+    $q->bindValue(':id', $account->getId(), PDO::PARAM_INT);
+    $q->execute();
+  }
+
+
 }
 ?>
