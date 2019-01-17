@@ -30,5 +30,13 @@ class BankAccount extends entity
     {
         $this->hydrate($data);
     }
+    public function viewMoney() {
+      if ($this->getMoney() >= 0) {
+        echo '<td>' . $this->getMoney() . '</td>';
+      }
+      else {
+        echo '<td class="warningMoney">' . $this->getMoney() . ' <i class="fas fa-exclamation-triangle"></i> </td>';
+      }
+    }
 }
 ?>
