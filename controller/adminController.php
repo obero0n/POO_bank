@@ -6,7 +6,8 @@
 class adminController
 {
 
-  public function loginAdmin() {
+  public function loginAdmin() 
+  {
     echo "Voici la login";
   }
 }
