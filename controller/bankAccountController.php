@@ -1,18 +1,18 @@
-<?php 
+<?php
 class BankAccountController
 {
     public function payment()
     {
         $value = "versement";
         $id = $_GET["id"];
-        if(!empty($_POST)) 
+        if(!empty($_POST))
         {
             $manager = new BankAccountsManager();
-            $account1 = $manager->getAccount($id);  
+            $account1 = $manager->getAccount($id);
             $finalMoney = $account1->getMoney() - $_POST["amount"];
             $account1->payment($_POST["amount"], $finalMoney);
             $manager->update($account1);
-            redirectTo(""); 
+            redirectTo("");
         }
         require "view/paymentWithdrawalView.php";
     }
@@ -24,16 +24,16 @@ class BankAccountController
         if(!empty($_POST))
         {
             $manager1 = new BankAccountsManager();
-            $account2 = $manager1->getAccount($id);   
-            $finalMoney = $account2->getMoney() - $_POST["amount"]; 
+            $account2 = $manager1->getAccount($id);
+            $finalMoney = $account2->getMoney() - $_POST["amount"];
             $account2->withdrawal($_POST["amount"], $finalMoney);
-            $manager1->update($account2);  
-            redirectTo(""); 
+            $manager1->update($account2);
+            redirectTo("");
         }
         require "view/paymentWithdrawalView.php";
     }
 
-    public function singleBankAccount() 
+    public function singleBankAccount()
     {
         require "view/singleBankAccountView.php";
     }

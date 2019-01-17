@@ -10,8 +10,8 @@ class BankAccount extends entity
     {
         $this->name = $name;
     }
-    
-    public function getName() 
+
+    public function getName()
     {
         return $this->name;
     }
@@ -20,8 +20,8 @@ class BankAccount extends entity
     {
         $this->money = $money;
     }
-    
-    public function getMoney() 
+
+    public function getMoney()
     {
         return $this->money;
     }
@@ -36,7 +36,7 @@ class BankAccount extends entity
     {
         if($amount <= 1000 && $finalMoney >= -100)
         {
-            $this->money += $amount;    
+            $this->money += $amount;
         }
 }
 
@@ -45,7 +45,7 @@ class BankAccount extends entity
     {
         if($amount <= 1000 && $finalMoney >= -100)
         {
-            $this->money -= $amount;    
+            $this->money -= $amount;
         }
     }
 
@@ -56,6 +56,14 @@ class BankAccount extends entity
         {
 
         }
+    }
+    public function viewMoney() {
+      if ($this->getMoney() >= 0) {
+        echo '<td>' . $this->getMoney() . '</td>';
+      }
+      else {
+        echo '<td class="warningMoney">' . $this->getMoney() . ' <i class="fas fa-exclamation-triangle"></i> </td>';
+      }
     }
 }
 ?>
