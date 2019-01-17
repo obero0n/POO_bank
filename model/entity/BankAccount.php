@@ -10,8 +10,8 @@ class BankAccount extends entity
     {
         $this->name = $name;
     }
-
-    public function getName()
+    
+    public function getName() 
     {
         return $this->name;
     }
@@ -21,7 +21,7 @@ class BankAccount extends entity
         $this->money = $money;
     }
     
-    public function getMoney()
+    public function getMoney() 
     {
         return $this->money;
     }
@@ -31,22 +31,15 @@ class BankAccount extends entity
         $this->hydrate($data);
     }
     //Versement
-    public function payment($amount)
+    public function payment($form, $money)
     {
-        if(isset($payment))
-        {
-            $finalMoney = $money + $amount;
-            return $finalMoney;
-        }
+        $finalMoney = $money + $form["amount"];
+        return $finalMoney;
     }
     //Retrait
     public function withdrawal($amount)
     {
-        if(isset($withdrawal))
-        {
-            $finalMoney = $money + $amount;
-            return $finalMoney;
-        }
+        
     }
     //Virement
     public function transfer($amount, $getter, $sender)
