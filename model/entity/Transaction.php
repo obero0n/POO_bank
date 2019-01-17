@@ -38,7 +38,7 @@ class Transaction extends BankAccount
     //Versement
     public function payment($amount, $finalMoney)
     {
-        if($amount <= 1000 && $finalMoney >= -100)
+        if($amount <= 1000 && $finalMoney >= -1000)
         {
             $this->money += $amount;    
         }
@@ -47,7 +47,7 @@ class Transaction extends BankAccount
     //Retrait
     public function withdrawal($amount, $finalMoney)
     {
-        if($amount <= 1000 && $finalMoney >= -100)
+        if($amount <= 1000 && $finalMoney >= -1000)
         {
             $this->money -= $amount;    
         }
