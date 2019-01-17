@@ -16,7 +16,7 @@ function getRoutes() {
   return [
     "" => [
       "exemple",
-      "welcome"
+      "welcome",
     ],
     "login" => [
       "admin",
@@ -35,7 +35,7 @@ function getRoutes() {
     "single" => [
       "bankAccount",
       "singleBankAccount",
-      ["id" => ["int"]]
+      ["id" => ["int"]],
     ],
     "deleteAccount" => [
       "exemple",
