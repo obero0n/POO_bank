@@ -1,4 +1,4 @@
-<?php 
+<?php
 require("template/header.php");
 $id = $_GET["id"];
 $manager = new bankAccountsManager;
@@ -24,12 +24,15 @@ $singleAccount = $manager->getAccount($id);
         <td>
           <?php echo $singleAccount->getMoney();?>
         </td>
+        <!-- <td class="warningMoney">
+          <?php echo $singleAccount->getMoney();?> <i class="fas fa-exclamation-triangle"></i>
+        </td> -->
         <td><a href="versement?id=<?php echo $singleAccount->getId();?>" class="card-link"><i class="far fa-credit-card"></i></a></td>
         <td><a href="retrait?id=<?php echo $singleAccount->getId();?>" class="card-link"><i class="far fa-credit-card"></i></a></td>
        </tr>
     </tbody>
   </table>
 </div>
-<?php 
+<?php
 require("template/footer.php");
 ?>
