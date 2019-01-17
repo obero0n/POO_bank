@@ -22,7 +22,7 @@ include "template/header.php";
       <tr>
         <th scope="row"><?php echo $value->getId();?></th>
         <td><a href="single?id=<?php echo $value->getId();?>"><?php echo $value->getName();?></a></td>
-        <td><?php echo $value->getMoney();?></td>
+        <?php echo $value->viewMoney();?>
         <td><a href="deleteAccount?id=<?php echo $value->getId(); ?>"><i class="fas fa-trash-alt"></i> </a> </td>
         <td> <a href="#"><i class="fas fa-pen-nib"></i></a> </td>
       </tr>
