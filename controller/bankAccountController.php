@@ -1,4 +1,4 @@
-<?php 
+<?php
 class BankAccountController
 {
     public function singleBankAccount() 

@@ -10,8 +10,8 @@ class BankAccount extends entity
     {
         $this->name = $name;
     }
-    
-    public function getName() 
+
+    public function getName()
     {
         return $this->name;
     }
@@ -20,8 +20,8 @@ class BankAccount extends entity
     {
         $this->money = $money;
     }
-    
-    public function getMoney() 
+
+    public function getMoney()
     {
         return $this->money;
     }
