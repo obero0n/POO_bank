@@ -3,10 +3,10 @@
 /**
  *
  */
-class adminController 
+class adminController
 {
 
-  public function loginUser() {
+  public function loginAdmin() {
     echo "Voici la login";
   }
 }

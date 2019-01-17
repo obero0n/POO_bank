@@ -5,7 +5,7 @@
 class exempleController
 {
 
-  public function welcome() 
+  public function welcomeAdmin()
   {
     $account = new BankAccountsManager();
     $list = $account->getList();
@@ -20,6 +20,16 @@ class exempleController
     $em = new BankAccountsManager();
     $em->delete($_GET["id"]);
     redirectTo("");
+  }
+
+  public function welcome()
+  {
+    require "view/loginUserView.php";
+  }
+
+  public function registerUser()
+  {
+    require "view/registerUserView.php";
   }
 }
 
