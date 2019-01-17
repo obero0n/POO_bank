@@ -39,11 +39,7 @@ class BankAccount extends entity
     //Retrait
     public function withdrawal($amount)
     {
-        if(isset($withdrawal))
-        {
-            $finalMoney = $money + $amount;
-            return $finalMoney;
-        }
+        
     }
     //Virement
     public function transfer($amount, $getter, $sender)

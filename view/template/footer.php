@@ -1,8 +1,8 @@
 
 <footer class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Fluid jumbotron</h1>
-    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    <h1 class="display-4">Ceci est un footer</h1>
+    <p class="lead">Réalisé par Simon, le graphiste et Cassandra, la non graphiste</p>
   </div>
 </footer>
 <!-- Optional JavaScript -->

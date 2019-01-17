@@ -11,8 +11,8 @@ $singleAccount = $manager->getAccount($id);
       <tr>
         <th scope="col">Nom</th>
         <th scope="col">Montant</th>
+        <th scope="col">Versement</th>
         <th scope="col">Retrait</th>
-        <th scope="col">Virement</th>
         </th>
       </tr>
     </thead>
