@@ -49,5 +49,14 @@ class BankAccountsManager extends manager
     $q->bindValue(':id', $account->getId(), PDO::PARAM_INT);
     $q->execute();
   }
+  public function updateTransfert(BankAccount $account)
+  {
+    $q = $this->_db->prepare('UPDATE bankAccount SET money = :money WHERE id = :id');
+    $q->bindValue(':money', $account->getMoney(), PDO::PARAM_INT);
+    $q->bindValue(':id', $account->getId(), PDO::PARAM_INT);
+    $q->execute();
+  }
+
+
 }
 ?>

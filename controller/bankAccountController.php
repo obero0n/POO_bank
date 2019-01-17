@@ -80,5 +80,14 @@ class BankAccountController
             $em->delete($_GET["id"]);
             redirectTo("");
     }
+
+    public function transfert()
+    {
+      // $getter = new BankAccountsManager();
+      // $getter->getAccount();
+      //
+
+      require "view/transfertView.php";
+    }
 }
 ?>

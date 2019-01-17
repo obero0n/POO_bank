@@ -26,6 +26,11 @@ function getRoutes() {
       "exemple",
       "welcomeAdmin",
     ],
+    "transfert" => [
+      "bankAccount",
+      "transfert",
+      ["id" => ["int"]]
+    ],
     "login" => [
       "admin",
       "loginAdmin",
