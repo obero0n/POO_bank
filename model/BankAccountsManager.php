@@ -24,11 +24,9 @@ class BankAccountsManager extends manager {
 
   public function add(BankAccount $account) {
     $q = $this->_db->prepare('INSERT INTO bankAccount(name, money) VALUES(:name, :money)');
-
-  $q->bindValue(':name', $account->getName());
-  $q->bindValue(':money', $account->getMoney(), PDO::PARAM_INT);
-
-  $q->execute();
+    $q->bindValue(':name', $account->getName());
+    $q->bindValue(':money', $account->getMoney(), PDO::PARAM_INT);
+    $q->execute();
   }
 
   ///////////////////////////////////////////////////////////////////////

@@ -1,12 +1,7 @@
 <?php
-include "view/template/header.php";
+include "template/header.php";
 ?>
-
-<?php echo $message; ?>
-<a <?php setHref("login"); ?>>Autre page</a>
-
-
-
+<h1 class="m-5">Liste de tous les comptes</h1>
   <table class="table container">
     <thead>
       <tr>
@@ -28,23 +23,7 @@ include "view/template/header.php";
     <?php endforeach; ?>
   </table>
 
-<?php var_dump($value); ?>
-
-
-
-<form class="container" method="post" action="">
-  <div class="form-group">
-    <label>name</label>
-    <input type="text" class="form-control" name="name">
-  </div>
-  <div class="form-group">
-    <label>money</label>
-    <input type="number" class="form-control" name="money">
-  </div>
-  <input type="submit" name="" value="Valide">
-
-</form>
-
 <?php
-include "view/template/footer.php"
+require "form/exempleForm.php";
+include "template/footer.php";
 ?>
