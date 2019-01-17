@@ -26,19 +26,22 @@ class BankAccountsManager extends manager {
 
   public function add(BankAccount $account) {
     $q = $this->_db->prepare('INSERT INTO bankAccount(name, money) VALUES(:name, :money)');
-
-  $q->bindValue(':name', $account->getName());
-  $q->bindValue(':money', $account->getMoney(), PDO::PARAM_INT);
-
-  $q->execute();
+    $q->bindValue(':name', $account->getName());
+    $q->bindValue(':money', $account->getMoney(), PDO::PARAM_INT);
+    $q->execute();
   }
 
   ///////////////////////////////////////////////////////////////////////
 
-  public function delete(BankAccount $account)
+  public function delete($id)
   {
-    $this->_db->exec('DELETE FROM bankAccount WHERE id = '.$account->id());
+    $this->_db->query("DELETE FROM bankAccount WHERE id = $id");
   }
+
+    ///////////////////////////////////////////////////////////////////////
+
+
+    
 }
 
 

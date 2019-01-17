@@ -17,20 +17,19 @@ include "view/template/header.php";
       </tr>
     </thead>
 
-
 <?php foreach ($list as $key => $value): ?>
     <tbody>
       <tr>
         <th scope="row"><?php echo $value->getid();?></th>
         <td><?php echo $value->getName();?></td>
         <td><?php echo $value->getMoney();?></td>
-        <td><a href="<?php  setHref("deleteAccount",["id" => $value['id']]); ?>" ><i class="fas fa-trash-alt"></i> </a> </td>
+        <td><a href="deleteAccount?id=<?php echo $value->getid();?>" ><i class="fas fa-trash-alt"></i> </a> </td>
       </tr>
     </tbody>
     <?php endforeach; ?>
   </table>
 
-<?php var_dump($value); ?>
+
 
 
 
