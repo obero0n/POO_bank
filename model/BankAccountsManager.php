@@ -36,12 +36,6 @@ class BankAccountsManager extends manager {
     $this->_db->query("DELETE FROM bankAccount WHERE id = $id");
   }
 
-<<<<<<< HEAD
-    ///////////////////////////////////////////////////////////////////////
-
-
-    
-=======
   ///////////////////////////////////////////////////////////////////////
   public function update(BankAccount $account)
   {
@@ -51,7 +45,6 @@ class BankAccountsManager extends manager {
     $q->bindValue(':id', $account->getId(), PDO::PARAM_INT);
     $q->execute();
   }
->>>>>>> 60dc6cd24599fc5cb8407e925a0044c5d3323934
 }
 
 

@@ -16,21 +16,13 @@ include "view/template/header.php";
         <th scope="col">delete</th>
       </tr>
     </thead>
-<<<<<<< HEAD
-
-=======
->>>>>>> 60dc6cd24599fc5cb8407e925a0044c5d3323934
 <?php foreach ($list as $key => $value): ?>
     <tbody>
       <tr>
         <th scope="row"><?php echo $value->getId();?></th>
         <td><a href="single?id=<?php echo $value->getId();?>"><?php echo $value->getName();?></a></td>
         <td><?php echo $value->getMoney();?></td>
-<<<<<<< HEAD
-        <td><a href="deleteAccount?id=<?php echo $value->getid();?>" ><i class="fas fa-trash-alt"></i> </a> </td>
-=======
         <td><a href="deleteAccount?id=<?php echo $value->getId(); ?>"><i class="fas fa-trash-alt"></i> </a> </td>
->>>>>>> 60dc6cd24599fc5cb8407e925a0044c5d3323934
       </tr>
     </tbody>
     <?php endforeach; ?>
