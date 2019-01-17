@@ -67,6 +67,14 @@ function getRoutes() {
       "exemple",
       "deleteAccount",
       ["id" => ["int"]]
+    ],
+    "addUser" => [
+      "user",
+      "addUserForm",
+    ]
+    "searchUser" => [
+      "user",
+      "",
     ]
   ];
 }
