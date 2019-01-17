@@ -9,7 +9,7 @@ class TransactionController
         {
             $accountManager = new BankAccountsManager();
             $account1 = $accountManager->getAccount($id);  
-            $finalMoney = $account1->getMoney() - $_POST["amount"];
+            $finalMoney = $account1->getMoney() + $_POST["amount"];
             $transactionManager = new TransactionManager();
             $account1->payment($_POST["amount"], $finalMoney);
             $manager->update($account1);
