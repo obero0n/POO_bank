@@ -21,18 +21,11 @@ class BankAccountController
         if(!empty($_POST))
         {
             $manager = new BankAccountsManager();
-<<<<<<< HEAD
             $account1 = $manager->getAccount($id);
-            $account1->payment($_POST["amount"]);
-            $manager->update($account1);
-            redirectTo("");
-=======
-            $account1 = $manager->getAccount($id);  
             $finalMoney = $account1->getMoney() - $_POST["amount"];
             $account1->payment($_POST["amount"], $finalMoney);
             $manager->update($account1);
-            redirectTo(""); 
->>>>>>> adfabf67f9d3aa3ce4908f52afe6f1a7fc2a1efa
+            redirectTo("");
         }
         require "view/paymentWithdrawalView.php";
     }
@@ -44,18 +37,11 @@ class BankAccountController
         if(!empty($_POST))
         {
             $manager1 = new BankAccountsManager();
-<<<<<<< HEAD
             $account2 = $manager1->getAccount($id);
-            $account2->withdrawal($_POST["amount"]);
+            $finalMoney = $account2->getMoney() - $_POST["amount"];
+            $account2->withdrawal($_POST["amount"], $finalMoney);
             $manager1->update($account2);
             redirectTo("");
-=======
-            $account2 = $manager1->getAccount($id);   
-            $finalMoney = $account2->getMoney() - $_POST["amount"]; 
-            $account2->withdrawal($_POST["amount"], $finalMoney);
-            $manager1->update($account2);  
-            redirectTo(""); 
->>>>>>> adfabf67f9d3aa3ce4908f52afe6f1a7fc2a1efa
         }
         require "view/paymentWithdrawalView.php";
     }
@@ -68,7 +54,6 @@ class BankAccountController
 
 // page of Account's list (show a table with all account with action to: update / delete / add)
     public function listAccount() {
-        $message = "Bonjour voici un boilerplate PHP intégrant un système de routing";
         $account = new BankAccountsManager();
         $list = $account->getList();
         $compte = new BankAccount($_POST);
@@ -78,12 +63,16 @@ class BankAccountController
       }
 
 
-      public function addAccount(){
-        $compte = new BankAccount($_POST);
-        $account = new BankAccountsManager();
-        $account->add($compte);
+      public function addNewAccount(){
+        if (!empty($_POST)) {
+          $compte = new BankAccount($_POST);
+          $account = new BankAccountsManager();
+          $account->add($compte);
+          redirectTo("");
+        }
+          require "view/addAccountView.php";
 
-        require "view/addAccountView.php";
+
       }
 }
 ?>

@@ -15,13 +15,8 @@
 function getRoutes() {
   return [
     "" => [
-<<<<<<< HEAD
       "bankAccount",
       "listAccount"
-=======
-      "exemple",
-      "welcome",
->>>>>>> adfabf67f9d3aa3ce4908f52afe6f1a7fc2a1efa
     ],
     "login" => [
       "admin",
@@ -29,7 +24,7 @@ function getRoutes() {
     ],
     "addAccount" => [
       "bankAccount",
-      "addAccount",
+      "addNewAccount",
     ],
     "listAccount" => [
       "bankAccount",
