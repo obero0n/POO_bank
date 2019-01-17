@@ -34,7 +34,7 @@ class BankAccountsManager extends manager {
   public function delete($id)
   {
     $this->_db->query("DELETE FROM bankAccount WHERE id = $id");
-  }
+  } 
 
   ///////////////////////////////////////////////////////////////////////
   public function update(BankAccount $account)
