@@ -3,7 +3,7 @@ include "view/template/header.php";
 ?>
 
 <?php echo $message; ?>
-<a <?php setHref("login") ?>>Autre page</a>
+<a <?php setHref("login"); ?>>Autre page</a>
 
 
 
@@ -16,15 +16,13 @@ include "view/template/header.php";
         <th scope="col">delete</th>
       </tr>
     </thead>
-
-
 <?php foreach ($list as $key => $value): ?>
     <tbody>
       <tr>
-        <th scope="row"><?php echo $value->getid();?></th>
-        <td><?php echo $value->getName();?></td>
+        <th scope="row"><?php echo $value->getId();?></th>
+        <td><a href="single?id=<?php echo $value->getId();?>"><?php echo $value->getName();?></a></td>
         <td><?php echo $value->getMoney();?></td>
-        <td><a href="<?php  setHref("deleteAccount",["id" => $value['id']]); ?>" ><i class="fas fa-trash-alt"></i> </a> </td>
+        <td><a href="deleteAccount?id=<?php echo $value->getId(); ?>"><i class="fas fa-trash-alt"></i> </a> </td>
       </tr>
     </tbody>
     <?php endforeach; ?>

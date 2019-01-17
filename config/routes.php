@@ -25,16 +25,22 @@ function getRoutes() {
     "versement" => [
       "bankAccount",
       "payment",
+      ["id" => ["int"]]
     ],
     "retrait" => [
       "bankAccount",
       "withdrawal",
+      ["id" => ["int"]]
+    ],
+    "single" => [
+      "bankAccount",
+      "singleBankAccount",
+      ["id" => ["int"]]
     ],
     "deleteAccount" => [
       "exemple",
       "deleteAccount",
-       [
-         "id" => ["int"]]
+      ["id" => ["int"]]
     ]
   ];
 }
