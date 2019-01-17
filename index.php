@@ -7,8 +7,10 @@ require "service/sessionManager.php";
 require "service/formChecker.php";
 require "model/manager.php";
 require "model/BankAccountsManager.php";
+require "model/TransactionsManager.php";
 require "model/entity/entity.php";
 require "model/entity/BankAccount.php";
+require "model/entity/Transaction.php";
 
 autoloader::autoload();
 route();
