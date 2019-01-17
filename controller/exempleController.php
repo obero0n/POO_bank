@@ -21,14 +21,20 @@ class exempleController
 
       require "view/exempleView.php";
     }
-    public function deleteAccount(){
-      $id = $_GET['id'];
-      $deletAccount = new BankAccountsManager();
-      $erase = $deletAccount->delete($id);
 
-      header("Location:view/exempleView.php");
+    public function deleteAccount(){
+
+          $em = new BankAccountsManager();
+          $em->delete($_GET["id"]);
+          redirectTo("");
+
+  }
+
+
     }
-}
+
+
+
 
 
  ?>

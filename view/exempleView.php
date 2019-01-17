@@ -28,7 +28,7 @@ include "view/template/header.php";
     <?php endforeach; ?>
   </table>
 
-<?php var_dump($value); ?>
+
 
 
 
