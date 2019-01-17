@@ -74,5 +74,11 @@ class BankAccountController
 
 
       }
+      public function deleteAccount(){
+
+            $em = new BankAccountsManager();
+            $em->delete($_GET["id"]);
+            redirectTo("");
+    }
 }
 ?>
