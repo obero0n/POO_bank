@@ -14,6 +14,8 @@ include "view/template/header.php";
         <th scope="col">name</th>
         <th scope="col">money</th>
         <th scope="col">delete</th>
+        <th scope="col">update</th>
+
       </tr>
     </thead>
 <?php foreach ($list as $key => $value): ?>
@@ -23,6 +25,7 @@ include "view/template/header.php";
         <td><a href="single?id=<?php echo $value->getId();?>"><?php echo $value->getName();?></a></td>
         <td><?php echo $value->getMoney();?></td>
         <td><a href="deleteAccount?id=<?php echo $value->getId(); ?>"><i class="fas fa-trash-alt"></i> </a> </td>
+        <td> <a href="#"><i class="fas fa-pen-nib"></i></a> </td>
       </tr>
     </tbody>
     <?php endforeach; ?>
@@ -31,7 +34,7 @@ include "view/template/header.php";
 
 
 
-
+<h2>Add ACCOUNT</h2>
 <form class="container" method="post" action="">
   <div class="form-group">
     <label>name</label>
@@ -42,8 +45,9 @@ include "view/template/header.php";
     <input type="number" class="form-control" name="money">
   </div>
   <input type="submit" name="" value="Valide">
-
 </form>
+
+
 
 <?php
 include "view/template/footer.php"

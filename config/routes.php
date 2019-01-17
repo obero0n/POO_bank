@@ -22,6 +22,11 @@ function getRoutes() {
       "admin",
       "loginUser",
     ],
+    "listAccount" => [
+      "bankAccount",
+      "list",
+      ["id" => ["int"]]
+    ],
     "versement" => [
       "bankAccount",
       "payment",
