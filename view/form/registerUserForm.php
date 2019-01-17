@@ -1,4 +1,4 @@
-<form class="container" method="post" action="<?php setAction("");?>">
+<form class="container" method="post" action="<?php echo "addUser";?>">
   <div class="form-group">
     <label>Nom</label>
     <input type="text" class="form-control" name="name">
