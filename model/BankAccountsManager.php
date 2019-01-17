@@ -1,5 +1,6 @@
 <?php
-class BankAccountsManager extends manager {
+class BankAccountsManager extends manager 
+{
 
   public function getAccount($id)
   {
@@ -46,9 +47,4 @@ class BankAccountsManager extends manager {
     $q->execute();
   }
 }
-
-
-
-
-
- ?>
+?>
