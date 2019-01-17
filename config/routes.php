@@ -18,9 +18,17 @@ function getRoutes() {
       "exemple",
       "welcome",
     ],
+    "register" => [
+      "exemple",
+      "registerUser",
+    ],
+    "admin" => [
+      "exemple",
+      "welcomeAdmin",
+    ],
     "login" => [
       "admin",
-      "loginUser",
+      "loginAdmin",
     ],
     "versement" => [
       "transaction",
