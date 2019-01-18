@@ -7,5 +7,5 @@
     <label>Mot de passe</label>
     <input type="password" class="form-control" name="password">
   </div>
-  <input type="submit" value="Valide">
+  <input class="btn btn-info" type="submit" value="Valider">
 </form>

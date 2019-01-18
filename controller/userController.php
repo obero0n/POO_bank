@@ -15,7 +15,7 @@ class userController
         if ($_POST["name"] === $user->getName() && $_POST["password"] === $user->getPassword())
         {
           initializeUserSession($user);
-          redirectTo("single?id=" . $user->getId());
+          redirectTo("listAccount?id=" . $user->getId());
         }
       }
     }
