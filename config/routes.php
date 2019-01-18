@@ -15,8 +15,8 @@
 function getRoutes() {
   return [
     "" => [
-      "exemple",
-      "welcome",
+      "bankAccount",
+      "listAccount"
     ],
     "register" => [
       "exemple",
@@ -26,9 +26,27 @@ function getRoutes() {
       "exemple",
       "welcomeAdmin",
     ],
+    "transfert" => [
+      "bankAccount",
+      "transfert",
+      ["id" => ["int"]]
+    ],
     "login" => [
       "admin",
       "loginAdmin",
+    ],
+    "addAccount" => [
+      "bankAccount",
+      "addNewAccount",
+    ],
+    "updateAccount" => [
+      "bankAccount",
+      "updateAccount",
+    ],
+    "listAccount" => [
+      "bankAccount",
+      "list",
+      ["id" => ["int"]]
     ],
     "versement" => [
       "bankAccount",
@@ -49,6 +67,14 @@ function getRoutes() {
       "exemple",
       "deleteAccount",
       ["id" => ["int"]]
+    ],
+    "addUser" => [
+      "user",
+      "addUserForm",
+    ]
+    "searchUser" => [
+      "user",
+      "",
     ]
   ];
 }

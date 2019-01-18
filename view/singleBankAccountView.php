@@ -10,6 +10,7 @@ require("template/header.php");
         <th scope="col">Montant</th>
         <th scope="col">Versement</th>
         <th scope="col">Retrait</th>
+        <th scope="col">transfert</th>
         </th>
       </tr>
     </thead>
@@ -21,6 +22,7 @@ require("template/header.php");
         <?php echo $singleAccount->viewMoney(); ?>
         <td><a href="versement?id=<?php echo $singleAccount->getId();?>" class="card-link"><i class="far fa-credit-card"></i></a></td>
         <td><a href="retrait?id=<?php echo $singleAccount->getId();?>" class="card-link"><i class="far fa-credit-card"></i></a></td>
+        <td> <a href="transfert?id=<?php echo $singleAccount->getId();?>">faire un transfert</a> </td>
        </tr>
     </tbody>
   </table>
