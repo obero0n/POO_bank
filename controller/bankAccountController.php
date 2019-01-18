@@ -2,18 +2,6 @@
 class BankAccountController
 {
 
-
-
-  public function list() {
-
-      $account = new BankAccountsManager();
-      $list = $account->getList();
-      $compte = new BankAccount($_POST);
-      $account->add($compte);
-
-      require "view/exempleView.php";
-    }
-
     public function payment()
     {
         $value = "versement";
