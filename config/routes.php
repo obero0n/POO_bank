@@ -33,12 +33,12 @@ function getRoutes() {
       ["id" => ["int"]]
     ],
     "versement" => [
-      "transaction",
+      "bankAccount",
       "payments",
       ["id" => ["int"]]
     ],
     "retrait" => [
-      "transaction",
+      "bankAccount",
       "withdrawals",
       ["id" => ["int"]]
     ],

@@ -15,9 +15,9 @@ class Transaction extends BankAccount
         $this->sender = $sender;
     }
 
-    public function setAmount(string $Amount)
+    public function setAmount(string $amount)
     {
-        $this->Amount = $Amount;
+        $this->amount = $amount;
     }
 
     public function getGetter() 
@@ -36,20 +36,35 @@ class Transaction extends BankAccount
     }
 
     //Versement
-    public function payment($amount, $finalMoney)
+    public function payment($bankAccount, $accountManager)
     {
-        if($amount <= 1000 && $finalMoney >= -100)
+        if(!empty($_POST)) 
         {
-            $this->money += $amount;    
+            if($_POST["amount"] <= 1000)
+            {
+                $finalMoney = $bankAccount->getMoney() + $_POST["amount"];
+                $bankAccount->setMoney($finalMoney);
+                $accountManager->update($bankAccount); 
+                redirectTo("single?id=" . $bankAccount->getId());
+                }    
         }
-}
+    }
 
     //Retrait
-    public function withdrawal($amount, $finalMoney)
+    public function withdrawal($bankAccount, $accountManager)
     {
-        if($amount <= 1000 && $finalMoney >= -100)
+        if(!empty($_POST)) 
         {
-            $this->money -= $amount;    
+            if($_POST["amount"] <= 1000)
+            {
+                $finalMoney = $bankAccount->getMoney() - $_POST["amount"];
+                if($finalMoney >= -1000)
+                {
+                    $bankAccount->setMoney($finalMoney);
+                    $accountManager->update($bankAccount); 
+                    redirectTo("single?id=" . $bankAccount->getId());
+                }
+            }  
         }
     }
 
