@@ -14,19 +14,16 @@ class BankAccountController
         require "view/paymentWithdrawalView.php";
     }
 
-    public function withdrawal()
+    public function withdrawals()
     {
         $value = "retrait";
         $id = $_GET["id"];
-        if(!empty($_POST))
-        {
-            $manager = new BankAccountsManager;
-            $account = $manager->getAccount($id);   
-            $finalMoney = $account->getMoney() - $_POST["amount"]; 
-            $account->withdrawal($_POST["amount"], $finalMoney);
-            $manager->update($account);  
-            redirectTo(""); 
-        }
+
+        $accountManager = new BankAccountsManager;
+        $bankAccount = $accountManager->getAccount($id);  
+        $transaction = new Transaction([]);
+        $transaction->withdrawal($bankAccount, $accountManager);
+
         require "view/paymentWithdrawalView.php";
     }
     
@@ -37,7 +34,7 @@ class BankAccountController
         $singleAccount = $manager->getAccount($id);
         require "view/singleBankAccountView.php";
     }
-    
+
     // page of Account's list (show a table with all account with action to: update / delete / add)
     public function listAccount() {
         $account = new BankAccountsManager();

@@ -45,17 +45,26 @@ class Transaction extends BankAccount
                 $finalMoney = $bankAccount->getMoney() + $_POST["amount"];
                 $bankAccount->setMoney($finalMoney);
                 $accountManager->update($bankAccount); 
-                redirectTo("");
+                redirectTo("single?id=" . $bankAccount->getId());
                 }    
         }
     }
 
     //Retrait
-    public function withdrawal($amount, $finalMoney)
+    public function withdrawal($bankAccount, $accountManager)
     {
-        if($amount <= 1000 && $finalMoney >= -1000)
+        if(!empty($_POST)) 
         {
-            $this->money -= $amount;    
+            if($_POST["amount"] <= 1000)
+            {
+                $finalMoney = $bankAccount->getMoney() - $_POST["amount"];
+                if($finalMoney >= -1000)
+                {
+                    $bankAccount->setMoney($finalMoney);
+                    $accountManager->update($bankAccount); 
+                    redirectTo("single?id=" . $bankAccount->getId());
+                }
+            }  
         }
     }
 

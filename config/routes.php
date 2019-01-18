@@ -45,7 +45,7 @@ function getRoutes() {
     ],
     "listAccount" => [
       "bankAccount",
-      "list",
+      "listAccount",
       ["id" => ["int"]]
     ],
     "versement" => [
@@ -71,10 +71,6 @@ function getRoutes() {
     "addUser" => [
       "user",
       "addUserForm",
-    ]
-    "searchUser" => [
-      "user",
-      "",
     ]
   ];
 }
